@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="scene">
+        <h1>Découvrez la Falcon 9</h1>
+        <br>
+        <p class="first-paragraph" data-aos="fade-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut luctus tellus, in molestie eros. Nulla ex neque, pharetra ut turpis ut, feugiat feugiat sapien. Integer lorem magna, ullamcorper sed magna ut, porta efficitur est. Curabitur dignissim neque vitae pretium malesuada. Nulla vulputate nibh faucibus purus varius malesuada. Praesent facilisis, dolor quis mattis vestibulum, turpis nunc efficitur nisi, vitae rhoncus sapien erat eu justo. Duis eleifend placerat enim at hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin eget iaculis massa. Ut vitae augue quis massa euismod fringilla.
+
+Aliquam vitae tortor vel metus elementum vehicula id eu mi. Aenean mi nisi, ultrices ac mollis eget, consequat eu nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum maximus sapien at mauris facilisis, ut cursus urna viverra. Quisque ut felis quis libero rhoncus congue. In ac dolor imperdiet massa dignissim commodo molestie dictum sapien. Donec imperdiet dignissim lorem in feugiat. Vivamus nisl urna, scelerisque a facilisis vel, dapibus sed felis. Vestibulum porta ex eu dui tincidunt, non elementum eros semper. Duis iaculis nisi vel sem dapibus ultrices. Integer velit libero, tempor et mauris eget, fringilla iaculis magna. Phasellus convallis magna ut mauris malesuada, et tempor orci iaculis. Aenean tempus vestibulum arcu. Etiam placerat elit sit amet eros feugiat, eu ornare orci iaculis. Donec quis neque eu nibh viverra luctus.</p>
+        <div class="rocket-container">
+        <div class="rocket">
+            <img src="falcon9stage.png">
+        </div>
+        </div>
+        <div data-aos="fade-left">
+            <h2>Exemple</h2>
+            <p class="second-paragraph">
+                Vivamus blandit ante eu lorem mollis, nec blandit sem elementum. Nullam leo ipsum, sodales in rhoncus vitae, placerat et justo. Sed sollicitudin sollicitudin odio et mattis. Aenean ac augue sed lectus luctus venenatis nec rhoncus nisl. Aenean ultricies, neque eu facilisis volutpat, purus magna dapibus ante, non pharetra metus est quis eros. Nullam sed fermentum eros. Quisque eleifend dictum ligula, et molestie leo hendrerit vel. Aliquam metus lorem, aliquet vel mi eu, gravida malesuada nisi. Suspendisse eu condimentum est, ut semper massa. Phasellus varius tortor scelerisque libero mollis pulvinar. Cras vehicula sapien mattis ipsum ultricies convallis. Vivamus suscipit dignissim ante, at bibendum leo sodales vitae. Proin porta, lorem quis egestas faucibus, leo sem mattis tellus, et pellentesque velit odio a felis. Morbi scelerisque mattis ante sit amet elementum. Curabitur eget porttitor libero. Vestibulum congue accumsan sollicitudin.
+            </p>
+        </div>
+    </div>
+    <script>
+        function stars()
+        {
+            let count = 20;
+            let scene = document.querySelector('.scene');
+            let i = 0;
+            while(i < count)
+            {
+                let star = document.createElement('i');
+                star.classList.add("star");
+                let x = Math.floor(Math.random() * window.innerWidth);
+
+                let duration = Math.random() * 1;
+                let h = Math.random() * 100;
+                
+                star.style.left = x + 'px';
+                star.style.width = 1 + 'px';
+                star.style.height = 50 + h + 'px';
+                star.style.animationDuration = duration + 's';
+                scene.appendChild(star);
+                i++;
+            }
+        }
+        // stars();
+        
+        function scrollSlowly() {
+			var currentPosition = window.pageYOffset;
+			var targetPosition = currentPosition + 3000;
+			var distance = 3000;
+            console.log(distance)
+			var step = distance / 100;
+			var counter = 0;
+			var intervalId = setInterval(function() {
+				counter++;
+				window.scrollTo(0, currentPosition + step * counter);
+                
+				if (counter == 100) {
+					clearInterval(intervalId);
+				}
+			}, 20);
+            return new Promise(resolve => {
+      const scrollHandler = () => {
+        if (window.pageYOffset === targetPosition) {
+          window.removeEventListener('scroll', scrollHandler)
+          resolve()
+        }
+      }
+      window.addEventListener('scroll', scrollHandler)
+    })
+		}
+
+        let rocket = document.querySelector('.rocket');
+        rocket.addEventListener('click', function(){
+            rocket.style.animation = "animate 0.2s ease infinite";
+            stars();
+            rocket.style.setProperty('--afterBack', 'block');
+            rocket.style.setProperty('--beforeBack', 'block');
+            scrollSlowly().then(() => {
+                
+                const items = document.querySelectorAll(".star");
+                for (let item of items) {
+                    item.remove();
+                }
+                rocket.style.animation = "";
+                rocket.style.setProperty('--afterBack', 'none');
+                rocket.style.setProperty('--beforeBack', 'none');
+        })
+            
+        })
+        
+    </script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
