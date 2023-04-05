@@ -7,10 +7,18 @@
     <title>Space News</title>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
+
 </head>
 <body>
+    
     <div class="scene">
+        <a id="scrollbutton" href="#"></a>
+        <div id="space">
+            <div class="stars"></div>
+           </div>
         <h1>SpaceNews</h1>
         <h2>La fusée réutilisable : Une révolution dans l'industrie spatiale</h2>
         <br>
@@ -22,27 +30,9 @@
                 Nous allons vous parler de  cette nouvelle innovation qui peut révolutionner l’univers spatial !
                 
             </p>
-            <div class="container">
-                <div class="moon">
-                  <div class="crater crater1"></div>
-                  <div class="crater crater2"></div>
-                  <div class="crater crater3"></div>
-                  <div class="crater crater4"></div>
-                  <div class="crater crater5"></div>
-                  <div class="shadow"></div>
-                  <div class="eye eye-l"></div>
-                  <div class="eye eye-r"></div>
-                  <div class="mouth"></div>
-                  <div class="blush blush1"></div>
-                  <div class="blush blush2"></div>
-                </div>
-                <div class="orbit">
-                  <div class="rocket2">
-                          <div class="window"></div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
+            <img src="starship-image.jpg" id="starship">
             <p id="instruction">Cliquez sur la fusée pour découvrir la Falcon 9 !</p>
         <div class="rocket-container">
         <div class="rocket">
@@ -51,91 +41,28 @@
         </div>
         <div data-aos="fade-left">
             <h3 id="second-title">Histoire et contexte</h3>
-            <p class="second-paragraph">
-                Elon Musk, est le patron de SpaceX, qui est une entreprise américaine axée dans le domaine de l’astronautique et du vol spatial. 
-Le lanceur Falcon 9 est lancé pour la première fois en juin 2010. C’est une fusée partiellement réutilisable. 
-Son moteur Merlin est un moteur-fusée utilisé également sur la fusée Falcon 1. Il a été créé par la même société américaine SpaceX.
-Selon les statistiques de SpaceX, les lanceurs Falcon 9 ont lancé 127 satellites (exemple : Starlink) et participé à 135 missions complètes, avec seulement deux échecs. La nouvelle Falcon Heavy 2018 n’a effectué que trois missions jusqu’à présent, mais d’autres projets sont prévus pour l’avenir.
-Elon Musk, le patron de SpaceX, travaille désormais sur sa fusée Starship, réutilisable, destinée à voyager vers la Lune. De plus, d'ici 2050, le patron de SpaceX a l'intention de créer une ville sur Mars.
-Il faut savoir également que la Nasa a arrêté la navette spatiale puisque celle-ci était trop chère et dangereuse. La Nasa a donc créé un programme, le Commercial Crew Development, où ils donnent de l’argent à des entreprises pour qu’elles conçoivent des fusées permettant de se rendre jusqu’à l'ISS. C’est ainsi que SpaceX envoie  - environ tous les 6 mois - une équipe d’astronautes vers l’ISS.  
-Les fusées réutilisables sont le futur de l’aérospatial. Cela s’inscrit dans une démarche de développement durable. Économiquement puisque le coût de construction sera moindre, mais aussi écologiquement car certains matériaux utilisés pour la création de ces fusées sont rares et peuvent être néfastes envers la planète. 
-
-            </p>
+            <div class="second-paragraph">
+                <p class="second-paragraph-one" data-aos="fade-right">
+                    Elon Musk est à la tête de SpaceX, qui est une entreprise américaine axée dans le domaine de l’astronautique et du vol spatial. 
+                    Le lanceur Falcon 9 est lancé pour la première fois en juin 2010. C’est une fusée partiellement réutilisable. 
+                    Son moteur Merlin est un moteur-fusée utilisé également sur la fusée Falcon 1. Il a été créé par la même société américaine SpaceX.
+                    Selon les statistiques de SpaceX, les lanceurs Falcon 9 ont lancé 127 satellites (exemple : Starlink) et participé à 135 missions complètes, avec seulement deux échecs. La Falcon Heavy, une version plus lourde et plus puissante de la Falcon 9 n’a effectué que trois missions jusqu’à présent, mais d’autres projets sont prévus pour l’avenir.
+                    
+                </p>
+                <img src="image-fusees-aesthetic.jpg" class="right-image" data-aos="fade-left" style="top: 350vh;">
+                <p class="second-paragraph-two" data-aos="fade-left">
+                    Mais alors, dans quel but ces lanceurs réutilisables ont-ils été conçus? Il faut savoir que la Nasa a arrêté la navette spatiale puisque celle-ci était trop chère et dangereuse. La Nasa a donc créé un programme, le Commercial Crew Development, où ils donnent de l’argent à des entreprises pour qu’elles conçoivent des fusées permettant de se rendre jusqu’à l'ISS. C’est ainsi que SpaceX envoie  - environ tous les 6 mois - une équipe d’astronautes vers l’ISS.  
+                    Par ailleurs, les fusées réutilisables sont le futur de l’aérospatial. Cela s’inscrit dans une démarche de développement durable. Économiquement, puisque le coût de construction sera moindre, mais aussi écologiquement car certains matériaux utilisés pour la création de ces fusées sont rares et peuvent être néfastes envers la planète. 
+                    SpaceX travaille désormais sur sa fusée Starship, entièrement réutilisable, destinée à voyager vers la Lune. De plus, d'ici 2050, le patron de SpaceX a l'intention de coloniser Mars.
+                </p>
+                <img src="space-x-fusée.jpg" class="left-image" data-aos="fade-right" style="top: 380vh;">
+            </div>
         </div>
     </div>
-    <script>
-        function stars()
-        {
-            let count = 20;
-            let scene = document.querySelector('.scene');
-            let i = 0;
-            while(i < count)
-            {
-                let star = document.createElement('i');
-                star.classList.add("star");
-                let x = Math.floor(Math.random() * window.innerWidth);
-
-                let duration = Math.random() * 1;
-                let h = Math.random() * 100;
-                
-                star.style.left = x + 'px';
-                star.style.width = 1 + 'px';
-                star.style.height = 50 + h + 'px';
-                star.style.animationDuration = duration + 's';
-                scene.appendChild(star);
-                i++;
-            }
-        }
-        // stars();
-        
-        function scrollSlowly() {
-			var currentPosition = window.pageYOffset;
-			var targetPosition = currentPosition + 3100;
-			var distance = 3100;
-            console.log(distance)
-			var step = distance / 100;
-			var counter = 0;
-			var intervalId = setInterval(function() {
-				counter++;
-				window.scrollTo(0, currentPosition + step * counter);
-                
-				if (counter == 100) {
-					clearInterval(intervalId);
-				}
-			}, 20);
-            return new Promise(resolve => {
-      const scrollHandler = () => {
-        if (window.pageYOffset === targetPosition) {
-          window.removeEventListener('scroll', scrollHandler)
-          resolve()
-        }
-      }
-      window.addEventListener('scroll', scrollHandler)
-    })
-		}
-
-        let rocket = document.querySelector('.rocket');
-        rocket.addEventListener('click', function(){
-            rocket.style.animation = "animate 0.2s ease infinite";
-            stars();
-            rocket.style.setProperty('--afterBack', 'block');
-            rocket.style.setProperty('--beforeBack', 'block');
-            scrollSlowly().then(() => {
-                
-                const items = document.querySelectorAll(".star");
-                for (let item of items) {
-                    item.remove();
-                }
-                rocket.style.animation = "";
-                rocket.style.setProperty('--afterBack', 'none');
-                rocket.style.setProperty('--beforeBack', 'none');
-        })
-            
-        })
-        
-    </script>
+    <script src="script.js"></script>
     <script>
         AOS.init();
       </script>
+    
 </body>
 </html>
