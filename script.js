@@ -1,3 +1,5 @@
+let scrollCount = 0;
+
 function stars()
         {
             let count = 20;
@@ -21,12 +23,27 @@ function stars()
             }
         }
         // stars();
-        
+
+      
         function scrollSlowly() {
+          let paragraphs = document.getElementsByClassName("balise");
+          let offsetArr = [];
+          for(let i = 0; i < paragraphs.length; i++)
+          {
+            offsetArr.push(paragraphs[i].offsetTop);
+          }
 			var currentPosition = window.pageYOffset;
-			var targetPosition = currentPosition + 3100;
-			var distance = 3100;
-            console.log(distance)
+      var closest = offsetArr.reduce(function(prev, curr) {
+        return (Math.abs(curr - currentPosition) < Math.abs(prev - currentPosition) ? curr : prev);
+      });
+      if(closest <= currentPosition)
+      {
+        closest = offsetArr[offsetArr.indexOf(closest) + 1]
+      }
+			var targetPosition = paragraphs[offsetArr.indexOf(closest)].offsetTop;
+      
+			var distance = paragraphs[offsetArr.indexOf(closest)].offsetTop - currentPosition;
+        
 			var step = distance / 100;
 			var counter = 0;
 			var intervalId = setInterval(function() {
@@ -37,6 +54,14 @@ function stars()
 					clearInterval(intervalId);
 				}
 			}, 20);
+      // if(scrollCount < 1)
+      // {
+      // scrollCount += 1
+      // }
+      // else
+      // {
+      //   scrollCount = 0
+      // }
             return new Promise(resolve => {
       const scrollHandler = () => {
         if (window.pageYOffset === targetPosition) {

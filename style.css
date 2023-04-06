@@ -52,12 +52,12 @@ h2
 
 }
 
-.second-paragraph-one
+.paragraph-one
 {
     margin: 10px;
     position: absolute;
     left: 5%;
-    top: 350vh;
+    
     width: 35vw;
     text-align: justify;
     line-height: 1.5;
@@ -79,12 +79,12 @@ h2
     left: 10%;
     width: 25vw;
 }
-.second-paragraph-two
+.paragraph-two
 {
     margin: 10px;
     position: absolute;
     right: 5%;
-    top: 380vh;
+    
     width: 35vw;
     text-align: justify;
     line-height: 1.5;
@@ -93,10 +93,19 @@ h2
 {
     margin: 10px;
     position: absolute;
-    left: 10%;
+    left: 5%;
     top: 340vh;
     width: 25vw;
     
+}
+
+#third-title
+{
+    margin: 10px;
+    position: absolute;
+    left: 5%;
+    top: 660vh;
+    width: 25vw;
 }
 
 .scene
@@ -250,4 +259,38 @@ h2
   background-repeat: repeat;
   background-size: 200px 200px;
   height: 500vh;
+}
+
+#imagefour
+{
+    width: 20%;
+    border-radius: 5px;
+}
+
+#imagefive
+{
+    width: 35%;
+    right: 5%;
+}
+@media (max-width: 1400px) {
+  #imagetwo
+  {
+    top: 420vh !important;
+    
+  }
+
+  #imagefour
+  {
+    top: 750vh !important;
+  }
+  .haha
+  {
+    top: 780vh !important;
+  }
+}
+
+#schema-1
+{
+    width: 25%;
+    border-radius: 5px;;
 }
