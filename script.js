@@ -36,14 +36,17 @@ function stars()
       var closest = offsetArr.reduce(function(prev, curr) {
         return (Math.abs(curr - currentPosition) < Math.abs(prev - currentPosition) ? curr : prev);
       });
+
       if(closest <= currentPosition)
       {
         closest = offsetArr[offsetArr.indexOf(closest) + 1]
       }
+      console.log(closest)
+      console.log(currentPosition)
 			var targetPosition = paragraphs[offsetArr.indexOf(closest)].offsetTop;
       
 			var distance = paragraphs[offsetArr.indexOf(closest)].offsetTop - currentPosition;
-        
+      console.log(distance);
 			var step = distance / 100;
 			var counter = 0;
 			var intervalId = setInterval(function() {
