@@ -23,9 +23,9 @@ h1
 h2
 {
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 10%;
-    top: 10vh;
+    top: 2vh;
 }
 
 span
@@ -38,9 +38,9 @@ span
 .first-paragraph
 {
 
-    position: absolute;
+    position: relative;
     left: 5%;
-    top: 22vh;
+    top: 5vh;
     width: 35vw;
     text-align: justify;
     line-height: 1.5;
@@ -49,11 +49,11 @@ span
 
 #instruction
 {
-    margin: 10px;
-    position: absolute;
+    margin: 20px;
+    position: relative;
     text-align: right;
-    right: 10%;
-    top: 20vh;
+    float: right;
+    top: -30vh;
     word-wrap: break-word;
     max-width: 150px;
 
@@ -63,7 +63,7 @@ span
 .paragraph-one
 {
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 5%;
     
     width: 35vw;
@@ -83,7 +83,7 @@ span
 .left-image
 {
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 10%;
     width: 25vw;
 }
@@ -110,29 +110,29 @@ span
 #third-title
 {
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 5%;
-    top: 660vh;
+    top: 480vh;
     width: 25vw;
 }
 
 .conclusion
 {
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 5%;
-    top: 900vh;
+    top: 570vh;
     width: 25vw;
 } 
 .scene
 {
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 1100vh;
+    height: 1200vh;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(83,9,121,1) 50%, rgba(24,166,255,1) 100%);
     overflow: hidden;
-    
+    z-index: -2;
 }
 
 .scene i
@@ -155,14 +155,16 @@ span
     }
 }
 
-.scene .rocket-container
+.rocket-container
 {
-    position: relative;
+    position: absolute;
     display: flex;
+    top: 0;
+    left: 50%;
     justify-content: center;
 }
 
-.scene .rocket-container .rocket
+.rocket-container .rocket
 {
     position: fixed;
     transform: translateY(15vh);
@@ -170,7 +172,7 @@ span
     /* animation: animate 0.2s ease infinite; */
 }
 
-.scene .rocket-container .rocket img
+.rocket-container .rocket img
 {
     transform: scale(70%);
 }
@@ -279,58 +281,44 @@ span
 
 #imagefour
 {
+    position: relative;
     width: 20%;
     border-radius: 5px;
 }
 
 #imagefive
 {
+    position: relative;
     width: 35%;
-    right: 5%;
+    float: right;
 }
-@media (max-width: 1400px) {
-  #imagetwo
-  {
-    top: 420vh !important;
-    
-  }
-
-  #imagefour
-  {
-    top: 750vh !important;
-  }
-  .haha
-  {
-    top: 780vh !important;
-  }
-}
-
-@media (max-height: 765px) 
+.gg 
 {
-    #imagefour
-  {
-    top: 730vh !important;
-  }
-  .haha
-  {
-    top: 780vh !important;
-  }
+    position: relative;
+}
+.conc 
+{
+    position: relative;
+}
+#sources
+{
+    position: relative; bottom: -600vh; width: 65vw; margin: 10px;
+}
+.haha
+{
+    position: relative;
 }
 
-@media (max-height: 765px) and (max-width: 1300px)
+
+.hihi
 {
-    #imagefour
-  {
-    top: 750vh !important;
-  }
-  .haha
-  {
-    top: 800vh !important;
-  }
+    position:  relative !important;
 }
 
 #schema-1
 {
+    position: relative;
+    float: right;
     width: 25%;
     border-radius: 5px;;
 }
