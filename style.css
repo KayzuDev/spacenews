@@ -28,12 +28,19 @@ h2
     top: 10vh;
 }
 
+span
+{
+    position: relative;
+    left: 10%;
+    margin: 10px;
+}
+
 .first-paragraph
 {
 
     position: absolute;
     left: 5%;
-    top: 20vh;
+    top: 22vh;
     width: 35vw;
     text-align: justify;
     line-height: 1.5;
@@ -295,6 +302,30 @@ h2
   .haha
   {
     top: 780vh !important;
+  }
+}
+
+@media (max-height: 765px) 
+{
+    #imagefour
+  {
+    top: 730vh !important;
+  }
+  .haha
+  {
+    top: 780vh !important;
+  }
+}
+
+@media (max-height: 765px) and (max-width: 1300px)
+{
+    #imagefour
+  {
+    top: 750vh !important;
+  }
+  .haha
+  {
+    top: 800vh !important;
   }
 }
 
