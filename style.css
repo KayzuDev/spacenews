@@ -128,7 +128,7 @@ span
 {
     position: absolute;
     width: 100%;
-    height: 1200vh;
+    height: 1500vh;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(83,9,121,1) 50%, rgba(24,166,255,1) 100%);
     overflow: hidden;
